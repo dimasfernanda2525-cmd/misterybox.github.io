@@ -1,0 +1,6 @@
+{
+  "name": "Kejutan Hadiah Barcode @diferrr_",
+  "description": "Situs interaktif penuh kejutan meriah hasil scan barcode dengan animasi kotak hadiah, kejutan video layar penuh, dan profil Instagram @diferrr_.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

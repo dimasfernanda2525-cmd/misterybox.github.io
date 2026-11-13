@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #fffdf7;
+    color: #1c1917;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Lively Gift Box Jump Animation (Melompat-lompat with squash & stretch) */
+@keyframes gift-jump {
+  0%, 100% {
+    transform: translateY(0) scaleX(1.06) scaleY(0.92) rotate(0deg);
+  }
+  15% {
+    transform: translateY(-4px) scaleX(1.09) scaleY(0.89) rotate(-1deg);
+  }
+  40% {
+    transform: translateY(-34px) scaleX(0.95) scaleY(1.07) rotate(-3deg);
+  }
+  58% {
+    transform: translateY(-42px) scaleX(0.97) scaleY(1.05) rotate(2deg);
+  }
+  82% {
+    transform: translateY(2px) scaleX(1.08) scaleY(0.9) rotate(1deg);
+  }
+}
+
+@keyframes gift-shadow {
+  0%, 100% {
+    transform: scaleX(1.08) scaleY(1);
+    opacity: 0.28;
+  }
+  50% {
+    transform: scaleX(0.68) scaleY(0.75);
+    opacity: 0.12;
+  }
+}
+
+/* Hand Knocking / Tapping Animation (Tangan mengetuk kotak) */
+@keyframes hand-knock {
+  0%, 100% {
+    transform: translate(18px, -18px) rotate(-14deg) scale(1);
+  }
+  25% {
+    transform: translate(6px, -6px) rotate(-20deg) scale(1.03);
+  }
+  45% {
+    transform: translate(-6px, 6px) rotate(-6deg) scale(0.93);
+  }
+  55% {
+    transform: translate(10px, -10px) rotate(-15deg) scale(1);
+  }
+  75% {
+    transform: translate(-6px, 6px) rotate(-5deg) scale(0.92);
+  }
+}
+
+@keyframes tap-ripple {
+  0%, 38% {
+    transform: scale(0.35);
+    opacity: 0;
+  }
+  46% {
+    transform: scale(0.65);
+    opacity: 0.85;
+  }
+  65% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(0.35);
+    opacity: 0;
+  }
+  78% {
+    transform: scale(0.7);
+    opacity: 0.9;
+  }
+  98%, 100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+@keyframes box-shake-intense {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  15% { transform: translate(-6px, -4px) rotate(-5deg) scale(1.05); }
+  30% { transform: translate(6px, 3px) rotate(5deg) scale(1.08); }
+  45% { transform: translate(-7px, 2px) rotate(-6deg) scale(1.04); }
+  60% { transform: translate(7px, -4px) rotate(6deg) scale(1.1); }
+  75% { transform: translate(-4px, 3px) rotate(-4deg) scale(1.06); }
+  90% { transform: translate(4px, -2px) rotate(3deg) scale(1.03); }
+}
+
+@keyframes sunburst-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.76) translateY(18px);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.03) translateY(-3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-gift-jump {
+  animation: gift-jump 1.35s cubic-bezier(0.32, 0.72, 0.25, 1) infinite;
+}
+
+.animate-gift-shadow {
+  animation: gift-shadow 1.35s cubic-bezier(0.32, 0.72, 0.25, 1) infinite;
+}
+
+.animate-hand-knock {
+  animation: hand-knock 1.45s ease-in-out infinite;
+}
+
+.animate-tap-ripple {
+  animation: tap-ripple 1.45s ease-out infinite;
+}
+
+.animate-box-shake {
+  animation: box-shake-intense 0.45s ease-in-out infinite;
+}
+
+.animate-sunburst {
+  animation: sunburst-spin 36s linear infinite;
+}
+
+.animate-pop-in {
+  animation: pop-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-gift-jump,
+  .animate-gift-shadow,
+  .animate-hand-knock,
+  .animate-tap-ripple,
+  .animate-box-shake,
+  .animate-sunburst,
+  .animate-pop-in {
+    animation: none !important;
+  }
+}
